@@ -1,0 +1,40 @@
+{
+  "project": "avatar-pipeline",
+  "title": "Cómo creo vídeos con avatares · Arucci",
+  "avatarName": "Arucci",
+  "pronunciation": "Aruchi",
+  "scenes": [
+    {
+      "text": "¿Cómo se convierte un proyecto de programación en un vídeo como este? Con un proceso que conecta guiones, voz y avatares.",
+      "visual": "01-recorrido.png"
+    },
+    {
+      "text": "Soy Aruchi, el avatar de Araceli. Ella prepara qué contar y qué gráfico acompaña cada frase.",
+      "visual": "02-escenas.png"
+    },
+    {
+      "text": "ElevenLabs transforma cada texto en audio. Un script mide su duración para ajustar las imágenes a la narración.",
+      "visual": "03-voz.png"
+    },
+    {
+      "text": "Después, HeyGen recibe ese audio y genera mi vídeo sincronizando la boca con la voz. La voz y la imagen son pasos distintos.",
+      "visual": "04-avatar.png"
+    },
+    {
+      "text": "FFmpeg combina el avatar arriba y los diagramas abajo. Los tiempos deciden cuándo cambia cada gráfico.",
+      "visual": "05-montaje.png"
+    },
+    {
+      "text": "La música también la creamos con inteligencia artificial, usando Suno. FFmpeg la mezcla bajo mi voz. Araceli revisa el vídeo y los subtítulos antes de publicar.",
+      "visual": "06-revision.png"
+    },
+    {
+      "text": "Para YouTube largo utiliza su avatar personal en Synthesia. Cada formato tiene su propio guion.",
+      "visual": "07-formatos.png"
+    },
+    {
+      "text": "El repositorio explica cómo reproducirlo con tus propias claves, tu voz y tu avatar. Este vídeo es la demostración. ¿Qué crearías tú?",
+      "visual": "08-reutilizar.png"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Credenciales
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Sistema y dependencias
+.DS_Store
+node_modules/
+*.log
+
+# Entregables audiovisuales locales
+projects/*/output/**/*
+!projects/*/output/**/
+!projects/*/output/**/.gitkeep
+
+# Recursos binarios compartidos que requieren licencia
+shared/music/*
+!shared/music/.gitkeep
+
+# Temporales de render
+.tmp/
+tmp/

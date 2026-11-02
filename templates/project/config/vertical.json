@@ -1,0 +1,20 @@
+{
+  "project": "proyectoXX",
+  "title": "Proyecto XX · Arucci narradora",
+  "avatarName": "Arucci",
+  "pronunciation": "Aruchi",
+  "scenes": [
+    {
+      "text": "Hola, soy Aruchi, el avatar de Araceli Fradejas Muñoz.",
+      "visual": "intro"
+    },
+    {
+      "text": "Escribe aquí la historia del proyecto en tercera persona.",
+      "visual": "captura-01.png"
+    },
+    {
+      "text": "Sigue a Araceli para descubrir el próximo proyecto.",
+      "visual": "outro"
+    }
+  ]
+}
