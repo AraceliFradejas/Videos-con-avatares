@@ -17,6 +17,6 @@ Genera los gráficos desde la raíz con `npm run diagrams -- projects/avatar-pip
 
 La composición vertical coloca a Arucci arriba y los gráficos abajo, con Warm Analog Pad de fondo. La pista fue creada con Suno. Se guarda una versión con música, una limpia y un archivo SRT externo. Los MP4, el audio y los recursos personales se conservan localmente y no forman parte de este repositorio.
 
-El vídeo largo se prepara en el editor de Synthesia con mi avatar personal y el guion en primera persona. La configuración API es una alternativa, no un requisito para seguir ese camino.
+El [vídeo largo](https://www.youtube.com/watch?v=hC1neS7fEbk) se ha preparado en el editor de Synthesia con mi avatar personal y narración en primera persona. Ya está publicado, con música de Suno durante sus 8 min 30 s. El [Short de Arucci](https://www.youtube.com/shorts/Gher00dWO8s) también se puede ver en YouTube. La configuración API es una alternativa, no un requisito para seguir ese camino.
 
 Antes de generar tu versión, cambia las referencias a Arucci y Araceli por tu presentación y configura tus propios identificadores.

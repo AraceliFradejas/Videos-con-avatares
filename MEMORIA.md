@@ -3,6 +3,15 @@
 **Autora: Araceli Fradejas Muñoz**  
 **Fecha de esta edición: 2 de noviembre de 2026**
 
+## Vídeos publicados
+
+El proyecto se puede ver en dos formatos, publicados en [mi canal de YouTube](https://www.youtube.com/@AraceliFradejas) el 2 de noviembre de 2026:
+
+- **[Vídeo largo con mi avatar personal de Synthesia](https://www.youtube.com/watch?v=hC1neS7fEbk) · 8 min 30 s.** Explico el propósito del proyecto, el flujo de integración, los diagramas y el criterio de producción. La presentación se ha preparado en el editor de Synthesia y la música de Suno se ha incorporado posteriormente con FFmpeg.
+- **[Short de Arucci](https://www.youtube.com/shorts/Gher00dWO8s) · 59 s.** Presenta de forma breve el proceso que conecta guion, ElevenLabs, HeyGen, Mermaid, FFmpeg y la creación musical con Suno.
+
+Son dos relatos adaptados a su formato. Los enlaces permiten consultar el resultado público; los archivos originales de vídeo, voz y música permanecen fuera de Git.
+
 ## Motivación
 
 Cuando termino un proyecto de desarrollo, quiero mostrar algo más que una lista de tecnologías. Me interesa explicar el problema, enseñar el resultado y contar las decisiones que he tomado. En mi portfolio, esa comunicación se repite con cada proyecto y necesita guiones, imágenes y montaje.
@@ -61,7 +70,7 @@ Los subtítulos se entregan en un archivo SRT independiente. El generador produc
 
 ### 7. Vídeo largo
 
-El guion del largo está preparado para mi avatar personal de Synthesia. El montaje se trabaja en el editor, con recursos visuales adaptados al formato horizontal. El repositorio incluye una configuración y scripts para usar la API cuando una cuenta y un avatar tengan acceso compatible; es una alternativa al editor.
+He preparado la presentación larga en el editor de Synthesia con mi avatar personal y los recursos visuales del guion. El [resultado publicado](https://www.youtube.com/watch?v=hC1neS7fEbk) dura 8 min 30 s. Después de exportar la fuente sin música, he incorporado *Warm Analog Pad* con FFmpeg. El repositorio incluye también una configuración y scripts para utilizar la API cuando una cuenta y un avatar tengan acceso compatible; esa alternativa no fue la utilizada para producir este largo.
 
 ## Esquemas detallados del vídeo de Synthesia
 
@@ -157,7 +166,7 @@ La revisión reúne tres tareas: leer los subtítulos, inspeccionar el encuadre 
 
 El corto utiliza ElevenLabs, HeyGen y FFmpeg. El largo parte de un guion adaptado y de mi avatar personal en Synthesia. Es una ruta independiente: para trabajar en el editor de Synthesia no necesito generar antes una voz en ElevenLabs ni un vídeo en HeyGen.
 
-Los scripts API incluidos son una alternativa cuando la cuenta y el avatar tienen acceso compatible. Solicitan y descargan una presentación con avatar; no insertan automáticamente los gráficos ni realizan la edición editorial del largo. Estas láminas se preparan para incorporarlas en ese montaje. El estado reflejado en esta edición es el de un largo en preparación.
+Los scripts API incluidos son una alternativa cuando la cuenta y el avatar tienen acceso compatible. Solicitan y descargan una presentación con avatar; no insertan automáticamente los gráficos ni realizan la edición editorial del largo. Las láminas se prepararon para acompañar ese montaje. El esquema conserva el estado de planificación del guion, cuando el largo estaba en preparación; el [vídeo final](https://www.youtube.com/watch?v=hC1neS7fEbk) ya está publicado.
 
 [Fuente Mermaid](docs/esquemas-synthesia/mermaid/07-formatos.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/07-formatos.svg)
 
@@ -207,7 +216,7 @@ La calidad de una producción necesita además escucha, inspección visual y rev
 
 El cierre conecta cuatro ideas: partir de una necesidad, integrar capacidades, documentar qué evidencia existe y conservar la responsabilidad sobre el resultado. La referencia disponible es el corto de unos 59 segundos con ocho diagramas; los materiales audiovisuales personales permanecen fuera del repositorio.
 
-Lo reutilizable es el proceso, acompañado de código, guías y fuentes editables. Los siguientes pasos son completar el largo, mejorar la lectura de los subtítulos y facilitar el seguimiento de las generaciones. Los recuadros de próximos pasos describen trabajo pendiente, no capacidades ya implementadas.
+Lo reutilizable es el proceso, acompañado de código, guías y fuentes editables. El esquema recoge los siguientes pasos que definí al preparar el guion: completar el largo, mejorar la lectura de los subtítulos y facilitar el seguimiento de las generaciones. La publicación del largo ya se ha completado. Las otras mejoras siguen planteadas; los recuadros se conservan como registro de aquella fase de planificación.
 
 [Fuente Mermaid](docs/esquemas-synthesia/mermaid/10-criterio.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/10-criterio.svg)
 
@@ -217,7 +226,9 @@ El corto revisado dura **59,27 segundos** y contiene ocho diagramas Mermaid. Exp
 
 El MP4 final utiliza H.264/AAC, 1080 × 1920 y 30 fps. Se ha comprobado su decodificación completa y se han inspeccionado fotogramas del montaje. Esto no sustituye la escucha final ni garantiza cómo tratará el archivo cada plataforma.
 
-El largo está en preparación en Synthesia. No se presenta como un entregable terminado.
+El [largo de Synthesia](https://www.youtube.com/watch?v=hC1neS7fEbk) también está terminado y publicado. La fuente dura **510,283 segundos** y conserva su imagen en 1920 × 1080 a 30 fps. Para cubrir todo el vídeo he utilizado tres repeticiones de la pista de Suno, con transiciones cruzadas de cuatro segundos, fundidos de entrada y salida y reducción automática de música bajo la voz.
+
+El flujo de imagen se ha copiado sin recodificación: su huella SHA-256 coincide entre la fuente y la versión con música. El MP4 final se ha decodificado completamente con FFmpeg sin errores. Estas comprobaciones describen el archivo local entregado; los enlaces anteriores permiten acceder a las publicaciones de YouTube.
 
 ## Qué automatizo y qué decido
 
@@ -238,7 +249,7 @@ La automatización también necesita límites claros. Los proveedores procesan t
 
 ## Próximas mejoras
 
-- Finalizar el largo y añadir su enlace público cuando esté disponible.
+- Mantener los enlaces de las publicaciones y documentar las siguientes versiones de los vídeos.
 - Configurar el recorte del avatar sin editar el filtro de FFmpeg.
 - Facilitar subtítulos divididos en frases.
 - Ampliar la validación en Linux y WSL2.

@@ -35,9 +35,9 @@ La integración continua ejecuta las comprobaciones locales y las pruebas en Ubu
 
 - La producción audiovisual de referencia se ha ejecutado en macOS.
 - Linux y WSL2 tienen instrucciones, pero no se ha producido allí el vídeo completo.
-- El largo se está preparando manualmente en Synthesia; no se presenta como terminado.
+- El largo se ha preparado manualmente en Synthesia y está publicado. La mezcla local con Suno dura 510,283 s; se ha comprobado su decodificación y que el flujo de imagen permanece idéntico al de la fuente.
 - La ruta API de Synthesia está incluida, pero no se ha vuelto a ejecutar en esta edición.
 - Las pruebas locales no verifican los contratos actuales de los proveedores externos.
-- No se ha verificado la publicación del archivo en cada red ni su tratamiento posterior.
+- Se han localizado el [largo](https://www.youtube.com/watch?v=hC1neS7fEbk) y el [Short](https://www.youtube.com/shorts/Gher00dWO8s) en el canal público. Esto no constituye una revisión completa de su reproducción ni de todas las redes.
 - La revisión técnica del MP4 no sustituye la escucha y aprobación final de la pieza.
 - Los permisos de la música dependen de las condiciones de la pista y de la cuenta; no se afirma que sea de dominio público.

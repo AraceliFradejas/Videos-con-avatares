@@ -12,6 +12,15 @@ Vídeos con avatares reúne el proceso que utilizo para explicar mis proyectos e
 
 **Para empezar:** [Guía paso a paso](docs/EMPEZAR.md). **Para conocer el proyecto:** [Memoria](MEMORIA.md). **Para ver un ejemplo:** [Guion y diagramas de Arucci](projects/avatar-pipeline/README.md).
 
+### Vídeos del proyecto
+
+| Formato | Qué puedes ver | YouTube |
+| --- | --- | --- |
+| Vídeo largo · 8 min 30 s | Mi avatar personal de Synthesia explica el propósito, la integración de herramientas, los diagramas y las decisiones de producción. Música creada con Suno. | [Ver el vídeo completo](https://www.youtube.com/watch?v=hC1neS7fEbk). |
+| Short de Arucci · 59 s | El recorrido breve: guion, voz con ElevenLabs, avatar con HeyGen, Mermaid, montaje y música de Suno. | [Ver el Short](https://www.youtube.com/shorts/Gher00dWO8s). |
+
+Ambos están publicados en [mi canal de YouTube](https://www.youtube.com/@AraceliFradejas). El repositorio contiene el código y los materiales editables para seguir el proceso con tus propios recursos.
+
 ### Una historia personal
 
 Mis proyectos de desarrollo tienen temas, decisiones y aprendizajes que quiero compartir. En KelseTS Talks, KelseTS Cars y el resto de mi portfolio, la presentación visual también forma parte de cómo cuento lo que he construido.
@@ -39,7 +48,7 @@ El kit utiliza tus propios recursos. No crea ni distribuye la voz o los avatares
 
 El corto de referencia está producido: **59,27 segundos**, ocho diagramas Mermaid y música creada con Suno. El montaje utiliza H.264/AAC, 1080 × 1920 y 30 fps. Conservo una versión con música, otra limpia y los subtítulos externos.
 
-El vídeo largo está en preparación en Synthesia. El repositorio incluye un guion y una ruta API para solicitar y descargar la presentación; la incorporación de los gráficos y la edición del largo requieren trabajo adicional.
+El [vídeo largo](https://www.youtube.com/watch?v=hC1neS7fEbk) ya está terminado y publicado. La presentación se ha preparado con mi avatar personal en el editor de Synthesia y la pista de Suno se ha añadido después durante sus 8 min 30 s. La música se repite con transiciones cruzadas y reducción bajo la voz. La ruta API de Synthesia permanece como alternativa incluida en el repositorio; no fue la utilizada para producir este largo.
 
 La [verificación](docs/VERIFICACION.md) distingue pruebas del código, comprobaciones del archivo audiovisual y límites pendientes. Los vídeos y audios personales se conservan localmente y no están incluidos en Git.
 
@@ -188,7 +197,7 @@ Este proceso acompaña la comunicación de mis proyectos de desarrollo. Puedes c
 
 ### Redes sociales
 
-[GitHub](https://github.com/AraceliFradejas) · [LinkedIn](https://www.linkedin.com/in/araceli-fradejas-munoz-transformaciondigital/) · [X](https://x.com/AraceliFradejas) · [Medium](https://medium.com/@araceli.fradejas) · [YouTube](https://www.youtube.com/@aracelifradejasmunoz2758)
+[GitHub](https://github.com/AraceliFradejas) · [LinkedIn](https://www.linkedin.com/in/araceli-fradejas-munoz-transformaciondigital/) · [X](https://x.com/AraceliFradejas) · [Medium](https://medium.com/@araceli.fradejas) · [YouTube](https://www.youtube.com/@AraceliFradejas)
 
 ### Licencia y uso de recursos
 
@@ -215,6 +224,15 @@ Personal project by **Araceli Fradejas Muñoz** to communicate software projects
 Vídeos con avatares brings together the workflow I use to explain my projects in TikTok videos, YouTube Shorts, Reels and longer YouTube presentations. It includes scene-based scripts, Mermaid diagrams and scripts connecting narration, avatar generation and editing. You can adapt it using your own keys, voice and avatar.
 
 **Get started:** [Step-by-step guide](docs/EMPEZAR.md). **Project background:** [Project report](MEMORIA.md). **Example:** [Arucci script and diagrams](projects/avatar-pipeline/README.md). The linked technical documentation and spoken scripts are in Spanish.
+
+### Project videos
+
+| Format | What you can watch | YouTube |
+| --- | --- | --- |
+| Long video · 8 min 30 s | My personal Synthesia avatar explains the purpose, tool integration, diagrams and production decisions, with music created in Suno. | [Watch the full video](https://www.youtube.com/watch?v=hC1neS7fEbk). |
+| Arucci Short · 59 s | A concise walkthrough of scripting, ElevenLabs narration, HeyGen animation, Mermaid, editing and Suno music. | [Watch the Short](https://www.youtube.com/shorts/Gher00dWO8s). |
+
+Both are published on [my YouTube channel](https://www.youtube.com/@AraceliFradejas). The repository contains code and editable materials to follow the process with your own resources.
 
 ### A personal story
 
@@ -243,7 +261,7 @@ The kit uses your own resources. My personal voice and avatars are not distribut
 
 The reference short has been produced: **59.27 seconds**, eight Mermaid diagrams and music created in Suno. It uses H.264/AAC, 1080 × 1920 and 30 fps. A clean version and external subtitles are also retained locally.
 
-The longer video is being prepared in Synthesia. The repository provides a script and an API route for requesting and downloading the presentation; adding diagrams and editing the long video require further work.
+The [long video](https://www.youtube.com/watch?v=hC1neS7fEbk) is now complete and published. I prepared the presentation with my personal avatar in the Synthesia editor, then added the Suno track throughout its 8 min 30 s duration, using crossfades between repetitions and reducing music beneath the voice. The Synthesia API route remains an included alternative; it was not used to produce this long video.
 
 [Verification](docs/VERIFICACION.md) distinguishes code tests, audiovisual file checks and outstanding limitations. Personal video and audio files are not included in Git.
 
@@ -335,7 +353,7 @@ These documents and example scripts are in Spanish.
 
 ### Social links
 
-[GitHub](https://github.com/AraceliFradejas) · [LinkedIn](https://www.linkedin.com/in/araceli-fradejas-munoz-transformaciondigital/) · [X](https://x.com/AraceliFradejas) · [Medium](https://medium.com/@araceli.fradejas) · [YouTube](https://www.youtube.com/@aracelifradejasmunoz2758)
+[GitHub](https://github.com/AraceliFradejas) · [LinkedIn](https://www.linkedin.com/in/araceli-fradejas-munoz-transformaciondigital/) · [X](https://x.com/AraceliFradejas) · [Medium](https://medium.com/@araceli.fradejas) · [YouTube](https://www.youtube.com/@AraceliFradejas)
 
 ### Licence and resource use
 
