@@ -1,0 +1,39 @@
+flowchart LR
+ subgraph VA[Valor e integración]
+ direction TB
+ A["Partir de una necesidad"]:::human
+ B["Conectar capacidades
+con un flujo reutilizable"]:::auto
+ A --> B
+ end
+ subgraph EV[Evidencia disponible]
+ direction TB
+ C["Referencia documentada
+Vertical de unos 59 s
+con ocho diagramas"]:::artifact
+ D["Kit público
+Código, guías y fuentes editables"]:::artifact
+ C --> D
+ end
+ subgraph RS[Responsabilidad]
+ direction TB
+ E["Documentar límites"]:::human
+ F["Revisar y decidir
+sobre el resultado"]:::human
+ E --> F
+ end
+ subgraph NX[Siguientes pasos]
+ direction TB
+ G["Completar el largo"]:::pending
+ H["Mejorar subtítulos"]:::pending
+ I["Facilitar seguimiento
+de las generaciones"]:::pending
+ end
+ VA --> EV --> RS
+ RS -.-> NX
+
+ G ~~~ H ~~~ I
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

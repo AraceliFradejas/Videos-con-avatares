@@ -1,0 +1,37 @@
+flowchart LR
+ subgraph IN[Recursos de entrada]
+ direction TB
+ A["MP4 de HeyGen
+Imagen y voz"]:::artifact
+ B["PNG de cada escena
+Diagramas y capturas"]:::artifact
+ C["Tiempos medidos
+Duración por escena"]:::artifact
+ end
+ subgraph FF[Montaje con FFmpeg]
+ direction TB
+ D["Recortar y escalar avatar"]:::auto
+ E["Ordenar visuales
+según los tiempos"]:::auto
+ F["Componer ambos paneles"]:::auto
+ D --> F
+ E --> F
+ end
+ subgraph OU[Vídeo base]
+ direction TB
+ G["MITAD SUPERIOR
+Avatar"]:::artifact
+ H["MITAD INFERIOR
+Diagrama de la escena"]:::artifact
+ I["1080 × 1920 · 30 fps
+H.264 / AAC"]:::artifact
+ G --> I
+ H --> I
+ end
+ IN --> FF --> OU
+
+ A ~~~ B ~~~ C
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

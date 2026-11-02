@@ -1,0 +1,29 @@
+flowchart TB
+ A["Historia del proyecto"]:::human
+ subgraph VE[Ruta vertical]
+ direction LR
+ B["Guion breve
+Arucci · tercera persona"]:::artifact
+ C["ElevenLabs → HeyGen"]:::auto
+ D["FFmpeg + diagramas + música"]:::auto
+ B --> C --> D
+ end
+ subgraph LA[Ruta larga · en preparación]
+ direction LR
+ E["Guion desarrollado
+Avatar personal · primera persona"]:::artifact
+ F["Synthesia: editor
+o API compatible"]:::auto
+ G["Presentación con avatar"]:::artifact
+ H["Incorporar gráficos
+y editar el largo"]:::human
+ E --> F --> G --> H
+ end
+ A --> VE
+ A --> LA
+ VE ~~~ LA
+
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

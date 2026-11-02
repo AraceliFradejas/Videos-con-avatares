@@ -63,6 +63,154 @@ Los subtítulos se entregan en un archivo SRT independiente. El generador produc
 
 El guion del largo está preparado para mi avatar personal de Synthesia. El montaje se trabaja en el editor, con recursos visuales adaptados al formato horizontal. El repositorio incluye una configuración y scripts para usar la API cuando una cuenta y un avatar tengan acceso compatible; es una alternativa al editor.
 
+## Esquemas detallados del vídeo de Synthesia
+
+Para desarrollar la explicación del vídeo largo he preparado **14 láminas para sus diez bloques narrativos**. Amplían los ocho gráficos del corto y permiten explicar con más detalle las relaciones entre herramientas, los archivos que se intercambian y las decisiones de producción.
+
+Las imágenes están en formato **16:9, 1920 × 1080**, sin rótulos de escena ni tiempos incrustados. Cada una se puede abrir a tamaño completo. Conservo también la fuente Mermaid y una versión SVG vectorial en el [índice de esquemas](docs/esquemas-synthesia/README.md).
+
+La leyenda distingue operaciones de scripts o generación en **turquesa**, decisiones y tareas manuales en **ámbar**, archivos y resultados en **azul**, y siguientes pasos o estados pendientes en **lila discontinuo**. Los colores ayudan a leer el flujo; no representan una validación automática de derechos ni una certificación de gobierno de IA.
+
+### 1. Del proyecto técnico a una historia comprensible
+
+<a href="docs/esquemas-synthesia/png/01-reto.png"><img src="docs/esquemas-synthesia/png/01-reto.png" alt="Del proyecto técnico a una historia comprensible" width="960"></a>
+
+La explicación empieza en el proyecto: el problema que resuelve, su funcionamiento y las decisiones que he tomado. A partir de esos elementos selecciono una historia y preparo el guion y los visuales. Después conecto voz, avatar, diagramas, música y montaje para convertirla en una presentación que se pueda seguir.
+
+El gráfico separa las capacidades de generación de las decisiones de producción. Elegir qué contar y revisar el resultado son tareas personales. La integración me ayuda a producir la historia, pero su claridad depende también de cómo organizo y presento el contenido.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/01-reto.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/01-reto.svg)
+
+### 2. Propósito, escenas y dos formatos
+
+<a href="docs/esquemas-synthesia/png/02-proposito.png"><img src="docs/esquemas-synthesia/png/02-proposito.png" alt="Propósito, escenas y dos formatos" width="960"></a>
+
+Antes de generar contenido me planteo tres preguntas: qué problema resuelvo, qué voy a enseñar y qué decisión quiero explicar. Estas preguntas me ayudan a elegir el hilo narrativo y a evitar que la presentación se convierta en una enumeración de herramientas.
+
+Cada escena combina texto hablado y un recurso visual. A partir de esa estructura preparo un guion breve para Arucci, en tercera persona, y otro desarrollado para mi avatar personal, en primera persona. Comparten el tema y las evidencias, pero la selección y el ritmo de la explicación se adaptan al formato.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/02-proposito.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/02-proposito.svg)
+
+### 3. Guion, configuración y gráficos editables
+
+<a href="docs/esquemas-synthesia/png/03-archivos.png"><img src="docs/esquemas-synthesia/png/03-archivos.png" alt="Guion, configuración y gráficos editables" width="960"></a>
+
+El Markdown conserva el relato completo para su lectura editorial. El JSON contiene las escenas que utilizan los scripts: el campo `text` guarda la narración y `visual` identifica la imagen correspondiente. Las fuentes Mermaid se exportan a PNG mediante Mermaid CLI; ese PNG es el recurso referenciado en la configuración.
+
+La relación entre estos archivos permite revisar el proceso sin ocultarlo dentro de una herramienta. También exige mantenerlos coherentes: editar el Markdown no actualiza automáticamente el JSON y cambiar un gráfico requiere volver a exportar su imagen. Las flechas representan estas relaciones entre recursos, no un sincronizador automático.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/03-archivos.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/03-archivos.svg)
+
+### 4. Voz por escenas, caché y tiempos reales
+
+<a href="docs/esquemas-synthesia/png/04-voz.png"><img src="docs/esquemas-synthesia/png/04-voz.png" alt="Voz por escenas, caché y tiempos reales" width="960"></a>
+
+El script de ElevenLabs trabaja por escenas. Calcula una huella a partir del texto, la voz, el modelo y los ajustes contemplados por la caché. Si encuentra un MP3 y una huella coincidentes, reutiliza el audio; si no, solicita una generación y guarda el resultado y su huella.
+
+FFmpeg mide la duración de los archivos para construir un JSON con inicio, final y duración por escena. También se prepara el audio unido que se enviará a HeyGen. Estos tiempos ayudan a ordenar los visuales y a crear el SRT; no son una alineación por palabra y deben contrastarse con el vídeo descargado.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/04-voz.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/04-voz.svg)
+
+### 5. Generación asíncrona y conservación del identificador
+
+<a href="docs/esquemas-synthesia/png/05-heygen.png"><img src="docs/esquemas-synthesia/png/05-heygen.png" alt="Generación asíncrona y conservación del identificador" width="960"></a>
+
+HeyGen recibe el audio creado y la referencia al avatar configurado. El comando de generación sube ese audio y solicita un vídeo nuevo; la respuesta proporciona un `video_id`. Otro comando consulta ese identificador y descarga el MP4 cuando el trabajo está completado.
+
+Guardar la referencia es una tarea manual del flujo actual. Si el trabajo sigue en proceso, debo consultar el mismo identificador más tarde. Volver a ejecutar el generador solicita otro vídeo, por lo que distinguir generación y consulta ayuda a evitar repeticiones involuntarias. El kit todavía no mantiene un registro automático de trabajos.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/05-heygen.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/05-heygen.svg)
+
+### 6. Entradas del montaje y composición vertical
+
+<a href="docs/esquemas-synthesia/png/06a-montaje.png"><img src="docs/esquemas-synthesia/png/06a-montaje.png" alt="Entradas del montaje y composición vertical" width="960"></a>
+
+El montaje combina tres entradas: el vídeo del avatar con su voz, los PNG de cada escena y los tiempos de la narración. FFmpeg recorta y escala la fuente del avatar, ordena los visuales y compone los dos paneles: imagen del avatar arriba y explicación gráfica abajo.
+
+El formato de referencia es 1080 × 1920, a 30 fps y con códecs H.264/AAC. El recorte está ajustado a una fuente de 720 × 1280 y a su encuadre concreto. Con otro avatar debo revisarlo y adaptarlo; la composición no incluye detección automática de la cara ni ajuste universal del encuadre.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/06a-montaje.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/06a-montaje.svg)
+
+### 7. Dirección musical, creación en Suno y mezcla local
+
+<a href="docs/esquemas-synthesia/png/06b-suno.png"><img src="docs/esquemas-synthesia/png/06b-suno.png" alt="Dirección musical, creación en Suno y mezcla local" width="960"></a>
+
+La música empieza por una decisión de producción: qué ambiente quiero transmitir y cuánto espacio debe dejar a la narración. Defino instrumentos y ritmo en un prompt, genero opciones en Suno, escucho los resultados y elijo la pista. En este ejemplo utilicé *Warm Analog Pad*, descargada en MP3.
+
+La generación musical se realiza en Suno y la elección y descarga son manuales; no hay una integración con su API en este kit. FFmpeg incorpora el audio local, aplica entrada y salida progresivas y reduce la música bajo la voz. Después reviso el equilibrio sonoro. El proceso y el prompt se documentan, pero la pista personal no se distribuye.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/06b-suno.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/06b-suno.svg)
+
+### 8. Subtítulos externos y revisión de la producción
+
+<a href="docs/esquemas-synthesia/png/06c-subtitulos.png"><img src="docs/esquemas-synthesia/png/06c-subtitulos.png" alt="Subtítulos externos y revisión de la producción" width="960"></a>
+
+Los textos y tiempos de escena permiten generar un archivo SRT independiente. Cada bloque inicial corresponde a una escena completa. Antes de publicarlo reviso si conviene dividirlo en frases para facilitar la lectura y compruebo que los tiempos acompañen la narración.
+
+La revisión reúne tres tareas: leer los subtítulos, inspeccionar el encuadre y la legibilidad de los gráficos, y escuchar voz, pausas y música. La decisión de publicar sigue siendo personal. Esta revisión está descrita como práctica de producción; los scripts no registran una aprobación ni bloquean técnicamente los pasos siguientes hasta obtenerla.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/06c-subtitulos.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/06c-subtitulos.svg)
+
+### 9. Una ruta propia para el vídeo largo
+
+<a href="docs/esquemas-synthesia/png/07-formatos.png"><img src="docs/esquemas-synthesia/png/07-formatos.png" alt="Una ruta propia para el vídeo largo" width="960"></a>
+
+El corto utiliza ElevenLabs, HeyGen y FFmpeg. El largo parte de un guion adaptado y de mi avatar personal en Synthesia. Es una ruta independiente: para trabajar en el editor de Synthesia no necesito generar antes una voz en ElevenLabs ni un vídeo en HeyGen.
+
+Los scripts API incluidos son una alternativa cuando la cuenta y el avatar tienen acceso compatible. Solicitan y descargan una presentación con avatar; no insertan automáticamente los gráficos ni realizan la edición editorial del largo. Estas láminas se preparan para incorporarlas en ese montaje. El estado reflejado en esta edición es el de un largo en preparación.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/07-formatos.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/07-formatos.svg)
+
+### 10. Repositorio público, producción local y proveedores externos
+
+<a href="docs/esquemas-synthesia/png/08a-datos.png"><img src="docs/esquemas-synthesia/png/08a-datos.png" alt="Repositorio público, producción local y proveedores externos" width="960"></a>
+
+El repositorio público contiene código, documentación, diagramas y configuraciones sin claves personales. En el entorno local mantengo las claves y los archivos de producción excluidos de Git. Esa separación facilita compartir el proceso sin incluir los recursos personales utilizados para generarlo.
+
+También debo tener presente qué información sale del entorno local: ElevenLabs recibe texto para generar la voz; HeyGen recibe audio para animar el avatar; Synthesia recibe el texto de la presentación cuando utilizo su API. Elegir contenido adecuado antes de enviarlo sigue siendo una decisión personal. Excluir un archivo de Git no equivale a cifrarlo ni controla su retención o tratamiento en un proveedor.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/08a-datos.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/08a-datos.svg)
+
+### 11. La licencia del código y los permisos de los recursos
+
+<a href="docs/esquemas-synthesia/png/08b-permisos.png"><img src="docs/esquemas-synthesia/png/08b-permisos.png" alt="La licencia del código y los permisos de los recursos" width="960"></a>
+
+La licencia MIT cubre el código, la documentación y los diagramas del kit. Por separado, las voces, los avatares, la música y los servicios tienen condiciones propias. Poder reutilizar un script no concede por sí mismo derechos sobre los materiales que ese script procesa.
+
+Antes de producir una versión debo revisar el acceso de mis cuentas y los permisos aplicables a cada recurso. En la música, esto incluye las condiciones de la pista y del plan utilizado. El gráfico representa comprobaciones manuales documentadas; el sistema no verifica automáticamente titularidad, consentimiento o licencias ni constituye una certificación de cumplimiento.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/08b-permisos.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/08b-permisos.svg)
+
+### 12. Reutilización y consulta para evitar repeticiones
+
+<a href="docs/esquemas-synthesia/png/09a-costes.png"><img src="docs/esquemas-synthesia/png/09a-costes.png" alt="Reutilización y consulta para evitar repeticiones" width="960"></a>
+
+Antes de producir una serie compruebo el acceso a las API y los créditos disponibles. En la voz, la caché permite reutilizar un audio que no ha cambiado según la huella definida. En el vídeo, conservar y consultar un trabajo existente evita confundir una consulta de estado con una solicitud nueva.
+
+Estas medidas ayudan a controlar repeticiones, pero no forman un sistema presupuestario. Los generadores de avatares solicitan un trabajo nuevo cada vez que se ejecutan y pueden consumir créditos. No hay estimador, límite de gasto ni contabilidad automática; tampoco se ha medido un ahorro económico atribuible al kit.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/09a-costes.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/09a-costes.svg)
+
+### 13. Pruebas de código y validación audiovisual
+
+<a href="docs/esquemas-synthesia/png/09b-evidencia.png"><img src="docs/esquemas-synthesia/png/09b-evidencia.png" alt="Pruebas de código y validación audiovisual" width="960"></a>
+
+Las tres pruebas locales actuales comprueban configuración, prioridad de variables y fallo temprano de HeyGen si faltan clave o avatar. El comando `check` revisa sintaxis JavaScript, estructura de las escenas del ejemplo, fuentes Mermaid y presencia de herramientas. Son comprobaciones útiles dentro de un alcance definido.
+
+La calidad de una producción necesita además escucha, inspección visual y revisión de subtítulos. Las pruebas no validan todos los contratos API ni los filtros de montaje y mezcla. La decodificación de un MP4 comprueba su integridad técnica, pero no demuestra por sí sola que la narración se entienda o que los gráficos resulten legibles.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/09b-evidencia.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/09b-evidencia.svg)
+
+### 14. Valor, integración, evidencia y responsabilidad
+
+<a href="docs/esquemas-synthesia/png/10-criterio.png"><img src="docs/esquemas-synthesia/png/10-criterio.png" alt="Valor, integración, evidencia y responsabilidad" width="960"></a>
+
+El cierre conecta cuatro ideas: partir de una necesidad, integrar capacidades, documentar qué evidencia existe y conservar la responsabilidad sobre el resultado. La referencia disponible es el corto de unos 59 segundos con ocho diagramas; los materiales audiovisuales personales permanecen fuera del repositorio.
+
+Lo reutilizable es el proceso, acompañado de código, guías y fuentes editables. Los siguientes pasos son completar el largo, mejorar la lectura de los subtítulos y facilitar el seguimiento de las generaciones. Los recuadros de próximos pasos describen trabajo pendiente, no capacidades ya implementadas.
+
+[Fuente Mermaid](docs/esquemas-synthesia/mermaid/10-criterio.mmd) · [Versión vectorial](docs/esquemas-synthesia/svg/10-criterio.svg)
+
 ## Resultado de esta edición
 
 El corto revisado dura **59,27 segundos** y contiene ocho diagramas Mermaid. Explica las funciones de ElevenLabs, HeyGen, FFmpeg, Synthesia y Suno. La escena musical describe explícitamente la creación de la pista en Suno y su mezcla bajo la voz.

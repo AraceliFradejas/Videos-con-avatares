@@ -1,0 +1,34 @@
+flowchart LR
+ subgraph CR[Solicitar una generación nueva]
+ direction TB
+ A["Audio MP3 + avatar elegido"]:::artifact
+ B["Subir el audio a HeyGen"]:::auto
+ C["Solicitar el vídeo"]:::auto
+ A --> B --> C
+ end
+ subgraph ID[Conservar la referencia]
+ direction TB
+ D["HeyGen devuelve video_id"]:::artifact
+ E["Guardar el identificador
+Tarea manual actual"]:::human
+ D --> E
+ end
+ subgraph ST[Consultar el mismo trabajo]
+ direction TB
+ F["Consultar estado con video_id"]:::auto
+ G{"¿Completado?"}:::auto
+ H["En proceso:
+consultar de nuevo más tarde"]:::human
+ F --> G
+ G -- No --> H
+ H -.-> F
+ end
+ I["Sí: descargar MP4
+con voz sincronizada"]:::artifact
+ CR --> ID --> ST
+ ST -- Sí --> I
+
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

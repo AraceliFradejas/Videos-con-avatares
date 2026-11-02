@@ -1,0 +1,32 @@
+flowchart LR
+ subgraph P[Proyecto técnico]
+ direction TB
+ A["Problema que resuelvo"]:::artifact
+ B["Funcionamiento y resultado"]:::artifact
+ C["Decisiones y aprendizajes"]:::artifact
+ end
+ subgraph H[Criterio de producción]
+ direction TB
+ D["Seleccionar la historia"]:::human
+ E["Preparar guion y visuales"]:::human
+ end
+ subgraph I[Integración de capacidades]
+ direction TB
+ F["Voz · avatar · diagramas"]:::auto
+ G["Música y montaje"]:::auto
+ end
+ subgraph R[Comunicación del valor]
+ direction TB
+ J["Revisión personal"]:::human
+ K["Historia comprensible"]:::artifact
+ end
+ D --> E
+ F --> G
+ J --> K
+ P --> H --> I --> R
+
+ A ~~~ B ~~~ C
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

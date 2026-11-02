@@ -1,0 +1,31 @@
+flowchart LR
+ subgraph TE[Comprobaciones de código]
+ direction TB
+ A["3 pruebas locales
+Configuración y fallos tempranos"]:::auto
+ B["check: sintaxis, escenas
+y herramientas disponibles"]:::auto
+ C["Alcance limitado
+Sin validación completa de API"]:::artifact
+ A --> C
+ B --> C
+ end
+ subgraph PR[Revisión de la producción]
+ direction TB
+ D["Escucha
+Voz, pausas y música"]:::human
+ E["Inspección visual
+Gráficos, recorte y sincronización"]:::human
+ F["Lectura
+Subtítulos y claridad"]:::human
+ end
+ G["Decisión humana
+antes de publicar"]:::human
+ TE -. "No sustituye la revisión audiovisual" .-> PR
+ PR --> G
+
+ D ~~~ E ~~~ F
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

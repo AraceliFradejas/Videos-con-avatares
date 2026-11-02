@@ -1,0 +1,31 @@
+flowchart LR
+ subgraph DI[Dirección musical]
+ direction TB
+ A["Definir ambiente e instrumentos
+Base instrumental para narración"]:::human
+ B["Escribir el prompt"]:::human
+ A --> B
+ end
+ subgraph SU[Creación en Suno]
+ direction TB
+ C["Generar opciones"]:::auto
+ D["Escuchar y elegir la pista"]:::human
+ E["Descargar el audio
+MP3 en este ejemplo"]:::human
+ C --> D --> E
+ end
+ subgraph MX[Mezcla local]
+ direction TB
+ F["FFmpeg: incorporar música"]:::auto
+ G["Entrada y salida progresivas
+Reducción bajo la voz"]:::auto
+ F --> G
+ end
+ H["Revisar equilibrio
+entre voz y música"]:::human
+ DI --> SU --> MX --> H
+
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

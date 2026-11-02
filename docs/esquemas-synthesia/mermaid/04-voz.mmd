@@ -1,0 +1,36 @@
+flowchart LR
+ subgraph EN[Entrada y huella]
+ direction TB
+ A["Texto por escena"]:::artifact
+ B["Voz · modelo · ajustes"]:::artifact
+ C["Calcular huella SHA-256"]:::auto
+ A --> C
+ B --> C
+ end
+ D{"¿Audio y huella
+coinciden?"}:::auto
+ subgraph VO[Comprobar y reutilizar]
+ direction TB
+ D{"¿Audio y huella\ncoinciden?"}:::auto
+ E["Sí: reutilizar MP3"]:::auto
+ F["No: generar en ElevenLabs
+y guardar MP3 y huella"]:::auto
+ end
+ subgraph TI[Construir la línea temporal]
+ direction TB
+ G["FFmpeg: medir duración"]:::auto
+ H["JSON de tiempos
+inicio · final · duración"]:::artifact
+ I["Unir audio de las escenas"]:::auto
+ G --> H
+ G --> I
+ end
+ D -- Sí --> E
+ D -- No --> F
+ EN --> VO
+ VO --> TI
+
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

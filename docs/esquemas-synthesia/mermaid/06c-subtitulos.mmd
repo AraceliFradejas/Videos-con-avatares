@@ -1,0 +1,28 @@
+flowchart LR
+ subgraph SR[Subtítulos externos]
+ direction TB
+ A["Texto + tiempos de escena"]:::artifact
+ B["Generar archivo SRT"]:::auto
+ C["Un bloque por escena"]:::artifact
+ A --> B --> C
+ end
+ subgraph RH[Revisión personal]
+ direction TB
+ D["Leer y ajustar subtítulos
+Dividir en frases si hace falta"]:::human
+ E["Comprobar encuadre
+y legibilidad de los gráficos"]:::human
+ F["Escuchar pronunciación
+y mezcla de música"]:::human
+ end
+ G["Vídeo montado con música"]:::artifact
+ H["Decidir si está listo
+para publicación manual"]:::human
+ SR --> RH --> H
+ G --> RH
+
+ D ~~~ E ~~~ F
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

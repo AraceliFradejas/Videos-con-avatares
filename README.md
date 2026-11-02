@@ -170,6 +170,7 @@ Estos gráficos forman parte del ejemplo. Puedes abrirlos a tamaño completo y m
 - [Memoria del proyecto](MEMORIA.md).
 - [Instalación y producción paso a paso](docs/EMPEZAR.md).
 - [Arquitectura y contratos entre herramientas](docs/ARQUITECTURA.md).
+- [Esquemas detallados del largo, con explicaciones](MEMORIA.md#esquemas-detallados-del-vídeo-de-synthesia) y [archivos PNG, SVG y Mermaid](docs/esquemas-synthesia/README.md).
 - [Herramientas, cuentas y configuración](docs/HERRAMIENTAS.md).
 - [Decisiones de producción](docs/DECISIONES.md) y [verificación](docs/VERIFICACION.md).
 - [Ejemplo de Arucci](projects/avatar-pipeline/README.md), [guion corto](projects/avatar-pipeline/guion.md) y [guion largo de referencia](projects/avatar-pipeline/guion-youtube.md).
@@ -316,6 +317,7 @@ The [example graphics](projects/avatar-pipeline/assets/screenshots/) and their [
 - [Project report](MEMORIA.md).
 - [Setup and production guide](docs/EMPEZAR.md).
 - [Architecture and data contracts](docs/ARQUITECTURA.md).
+- [Detailed long-video diagrams and explanations](MEMORIA.md#esquemas-detallados-del-vídeo-de-synthesia), with [PNG, SVG and Mermaid files](docs/esquemas-synthesia/README.md).
 - [Tools and account configuration](docs/HERRAMIENTAS.md).
 - [Production decisions](docs/DECISIONES.md) and [verification](docs/VERIFICACION.md).
 - [Arucci example](projects/avatar-pipeline/README.md), [short script](projects/avatar-pipeline/guion.md) and [reference long script](projects/avatar-pipeline/guion-youtube.md).

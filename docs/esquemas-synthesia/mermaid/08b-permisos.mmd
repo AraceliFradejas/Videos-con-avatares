@@ -1,0 +1,30 @@
+flowchart LR
+ subgraph CO[Código del repositorio]
+ direction TB
+ A["Scripts · documentación
+diagramas"]:::artifact
+ B["Licencia MIT"]:::artifact
+ A --> B
+ end
+ subgraph RE[Recursos de producción]
+ direction TB
+ C["Voz y avatar
+Permisos para utilizarlos"]:::human
+ D["Música
+Condiciones de la pista y cuenta"]:::human
+ E["Servicios externos
+Acceso API y condiciones"]:::human
+ end
+ F["Revisar por separado
+los permisos aplicables"]:::human
+ G["Seleccionar recursos
+para esta producción"]:::human
+ CO -. "La licencia no sustituye permisos" .-> F
+ CO ~~~ RE
+ RE --> F --> G
+
+ C ~~~ D ~~~ E
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

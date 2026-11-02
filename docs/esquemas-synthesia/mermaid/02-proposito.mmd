@@ -1,0 +1,29 @@
+flowchart LR
+ subgraph Q[Tres preguntas de partida]
+ direction TB
+ A["¿Qué problema resuelvo?"]:::human
+ B["¿Qué voy a enseñar?"]:::human
+ C["¿Qué decisión explico?"]:::human
+ end
+ D["Elegir el hilo narrativo"]:::human
+ subgraph S[Escena como unidad de trabajo]
+ direction TB
+ E["Texto hablado"]:::artifact
+ F["Recurso visual asociado"]:::artifact
+ end
+ subgraph V[Dos desarrollos editoriales]
+ direction TB
+ G["Vertical breve
+Arucci · tercera persona"]:::artifact
+ H["YouTube largo
+Avatar personal · primera persona"]:::artifact
+ end
+ Q --> D --> S --> V
+
+ A ~~~ B ~~~ C
+ E ~~~ F
+ G ~~~ H
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

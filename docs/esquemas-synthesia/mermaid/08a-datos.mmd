@@ -1,0 +1,36 @@
+flowchart LR
+ subgraph PU[Repositorio público]
+ direction TB
+ A["Código y documentación"]:::artifact
+ B["Mermaid y configuraciones
+sin claves personales"]:::artifact
+ end
+ subgraph LO[Producción local]
+ direction TB
+ C["Claves e identificadores
+Archivo local de entorno"]:::human
+ D["Texto de las escenas"]:::artifact
+ E["Audio y vídeos de producción"]:::artifact
+ end
+ subgraph EX[Procesamiento externo]
+ direction TB
+ F["ElevenLabs
+Recibe texto para la voz"]:::auto
+ G["HeyGen
+Recibe audio para el avatar"]:::auto
+ H["Synthesia
+Recibe texto para la presentación"]:::auto
+ end
+ I["Elegir contenido adecuado
+antes de enviarlo"]:::human
+ PU -. "Separación de contenidos" .-> LO
+ LO -- "Texto o audio según el proveedor" --> EX
+ I --> LO
+
+ A ~~~ B
+ C ~~~ D ~~~ E
+ F ~~~ G ~~~ H
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;

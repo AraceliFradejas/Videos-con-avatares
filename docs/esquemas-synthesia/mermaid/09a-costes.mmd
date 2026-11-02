@@ -1,0 +1,26 @@
+flowchart LR
+ subgraph AU[Voz: comprobar acceso y créditos]
+ direction TB
+ B{"¿Texto y voz
+sin cambios?"}:::auto
+ C["Reutilizar audio en caché"]:::auto
+ D["Generar solo el audio modificado"]:::auto
+ B -- Sí --> C
+ B -- No --> D
+ end
+ subgraph AV[Avatar: comprobar acceso y créditos]
+ direction TB
+ E{"¿Existe ya
+un trabajo solicitado?"}:::human
+ F["Consultar su identificador"]:::auto
+ G["Solicitar una generación nueva
+Puede consumir créditos"]:::auto
+ E -- Sí --> F
+ E -- No --> G
+ end
+
+ AU ~~~ AV
+classDef auto fill:#123D4D,stroke:#56D8C8,color:#F1FAFD,stroke-width:2px;
+classDef human fill:#433723,stroke:#F1BD6A,color:#FFF2D9,stroke-width:2px;
+classDef artifact fill:#172D4B,stroke:#82ABEC,color:#EDF4FF,stroke-width:2px;
+classDef pending fill:#302B45,stroke:#B7A3D9,color:#EEE8FA,stroke-width:2px,stroke-dasharray:6 4;
