@@ -25,3 +25,16 @@ test('funciona sin archivos y comunica nombres faltantes sin revelar valores', (
     requireEnv({ KEY: 'private' }, ['KEY']);
   } finally { fs.rmSync(root, { recursive: true, force: true }); }
 });
+
+
+test('HeyGen falla antes de subir audio si faltan clave o avatar', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const { fileURLToPath } = await import('node:url');
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'avatar-missing-'));
+  try {
+    const script = fileURLToPath(new URL('../scripts/avatars/generar-heygen.mjs', import.meta.url));
+    const result = spawnSync(process.execPath, [script, 'audio.mp3'], { cwd: root, env: {}, encoding: 'utf8' });
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /Falta configuración: HEYGEN_API_KEY, HEYGEN_AVATAR_ID/);
+  } finally { fs.rmSync(root, { recursive: true, force: true }); }
+});

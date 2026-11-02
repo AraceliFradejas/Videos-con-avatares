@@ -1,4 +1,4 @@
-import { loadEnv } from "../lib/env.mjs";
+import { loadEnv, requireEnv } from "../lib/env.mjs";
 import fs from "node:fs";
 
 const root = process.cwd();
@@ -7,6 +7,7 @@ const title = process.argv[3] ?? "Arucci · fuente vertical";
 if (!audioPath) throw new Error("Uso: node generar-heygen-desde-audio.mjs AUDIO [TÍTULO]");
 
 const env = loadEnv("heygen");
+requireEnv(env, ["HEYGEN_API_KEY", "HEYGEN_AVATAR_ID"]);
 
 const upload = await fetch("https://upload.heygen.com/v1/asset", {
   method: "POST",
